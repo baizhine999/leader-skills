@@ -1,0 +1,93 @@
+{
+  "name": "leader-skills",
+  "version": "1.0.0",
+  "description": "AI 扮演你的 Leader，用大厂管理思维 push 你成长。支持方案 Review、1-on-1 绩效谈话、KPI 季、复盘等场景，支持阿里/字节/腾讯/华为等大厂味道，支持自定义 Leader 人设。触发词：/leader, /review, /1on1, /kpi, /qbr, /alignment, /offboard, /create-leader, /flavor。",
+  "author": {
+    "name": "leader-skills contributors",
+    "url": "https://github.com/leader-skills/leader-skills"
+  },
+  "homepage": "https://github.com/leader-skills/leader-skills",
+  "repository": "https://github.com/leader-skills/leader-skills",
+  "license": "MIT",
+  "keywords": [
+    "leader",
+    "push",
+    "coaching",
+    "alibaba",
+    "bytedance",
+    "corporate-culture",
+    "career-growth",
+    "1on1",
+    "okr",
+    "kpi",
+    "review",
+    "qbr",
+    "flavor",
+    "chinese-tech"
+  ],
+  "skill": "SKILL.md",
+  "commands": [
+    {
+      "name": "leader",
+      "description": "激活 Leader 模式",
+      "file": "commands/leader.md"
+    },
+    {
+      "name": "review",
+      "description": "方案 / 代码 Review",
+      "file": "commands/review.md"
+    },
+    {
+      "name": "1on1",
+      "description": "1-on-1 绩效谈话",
+      "file": "commands/1on1.md"
+    },
+    {
+      "name": "kpi",
+      "description": "KPI 季模式：目标拆解与追踪",
+      "file": "commands/kpi.md"
+    },
+    {
+      "name": "qbr",
+      "description": "季度复盘拷问模式",
+      "file": "commands/qbr.md"
+    },
+    {
+      "name": "alignment",
+      "description": "拉通对齐会模式",
+      "file": "commands/alignment.md"
+    },
+    {
+      "name": "offboard",
+      "description": "离职面谈模式",
+      "file": "commands/offboard.md"
+    },
+    {
+      "name": "create-leader",
+      "description": "自定义 Leader 人设",
+      "file": "commands/create-leader.md"
+    },
+    {
+      "name": "flavor",
+      "description": "切换大厂味道",
+      "file": "commands/flavor.md"
+    },
+    {
+      "name": "leader:off",
+      "description": "关闭 Leader 模式",
+      "file": "commands/off.md"
+    }
+  ],
+  "triggers": {
+    "keywords": [
+      "/leader", "/review", "/1on1", "/kpi", "/qbr", "/alignment", "/offboard", "/flavor", "/create-leader",
+      "leader模式", "大厂模式", "帮我review", "帮我看看这个方案", "绩效谈话", "最近有点迷茫",
+      "要离职了", "我想离职", "复盘", "帮我对齐", "KPI怎么定", "OKR怎么写"
+    ]
+  },
+  "config": {
+    "default_flavor": "alibaba",
+    "config_path": "~/.leader/config.json",
+    "current_leader_path": "~/.leader/current.json"
+  }
+}

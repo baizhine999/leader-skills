@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>leader-skills — AI 化身你的大厂 Leader，push 你成长</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --border: #262626;
+    --text: #e5e5e5;
+    --muted: #737373;
+    --accent: #f97316;
+    --accent2: #eab308;
+    --accent3: #22c55e;
+    --blue: #3b82f6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .platform-badges {
+    display: flex; gap: 8px; justify-content: center;
+    margin-bottom: 24px; flex-wrap: wrap;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 14px; border: 1px solid #333;
+    border-radius: 20px; font-size: 12px; color: #e5e5e5;
+  }
+  .hero h1 {
+    font-size: 52px; font-weight: 800;
+    letter-spacing: -2px; margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero .subtitle {
+    font-size: 20px; color: var(--muted);
+    max-width: 640px; margin: 0 auto 32px;
+  }
+  .install-cmd {
+    display: inline-block; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 12px 28px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 15px; color: var(--accent3);
+    cursor: pointer; transition: border-color 0.2s;
+  }
+  .install-cmd:hover { border-color: var(--accent3); }
+  .install-hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  /* 核心定位 */
+  .positioning {
+    padding: 60px 0; border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .positioning blockquote {
+    font-size: 22px; font-style: italic; color: var(--accent2);
+    max-width: 640px; margin: 0 auto; padding: 0 40px; position: relative;
+  }
+  .positioning blockquote::before {
+    content: '\201C'; font-size: 60px; position: absolute;
+    left: 0; top: -10px; color: var(--border); font-family: Georgia, serif;
+  }
+  .positioning blockquote::after {
+    content: '\201D'; font-size: 60px; position: absolute;
+    right: 0; bottom: -30px; color: var(--border); font-family: Georgia, serif;
+  }
+
+  /* 压力等级 */
+  .levels { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  .levels h2 { font-size: 28px; margin-bottom: 8px; text-align: center; }
+  .levels .desc { text-align: center; color: var(--muted); margin-bottom: 32px; font-size: 14px; }
+  .level-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .level-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; transition: border-color 0.2s;
+  }
+  .level-card:hover { border-color: var(--accent); }
+  .level-num { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .level-card:nth-child(1) .level-num { color: var(--accent3); }
+  .level-card:nth-child(2) .level-num { color: var(--accent2); }
+  .level-card:nth-child(3) .level-num { color: var(--accent); }
+  .level-card:nth-child(4) .level-num { color: #ef4444; }
+  .level-card:nth-child(5) .level-num { color: #dc2626; }
+  .level-card:nth-child(6) .level-num { color: #b91c1c; }
+  .level-card h3 { font-size: 17px; margin-bottom: 6px; }
+  .level-card p { font-size: 13px; color: var(--muted); }
+  .level-card .pua-line {
+    margin-top: 12px; padding: 10px 14px;
+    background: rgba(249, 115, 22, 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 12px; color: var(--text); font-style: italic;
+  }
+
+  /* 场景 */
+  .scenarios { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  .scenarios h2 { font-size: 28px; margin-bottom: 8px; text-align: center; }
+  .scenarios .desc { text-align: center; color: var(--muted); margin-bottom: 32px; font-size: 14px; }
+  .scene-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .scene-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px; transition: border-color 0.2s;
+  }
+  .scene-card:hover { border-color: var(--blue); }
+  .scene-cmd {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px; color: var(--blue); margin-bottom: 8px;
+  }
+  .scene-card h3 { font-size: 15px; margin-bottom: 6px; }
+  .scene-card p { font-size: 13px; color: var(--muted); }
+
+  /* 大厂味道 */
+  .flavors { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  .flavors h2 { font-size: 28px; margin-bottom: 8px; text-align: center; }
+  .flavors .desc { text-align: center; color: var(--muted); margin-bottom: 32px; font-size: 14px; }
+  .flavor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .flavor-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .flavor-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .flavor-style { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .flavor-quote { font-size: 13px; font-style: italic; color: var(--accent2); }
+
+  /* 命令速查 */
+  .commands { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  .commands h2 { font-size: 28px; margin-bottom: 32px; text-align: center; }
+  .cmd-table { width: 100%; border-collapse: collapse; }
+  .cmd-table th {
+    text-align: left; padding: 10px 16px;
+    border-bottom: 2px solid var(--border);
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--muted);
+  }
+  .cmd-table td {
+    padding: 10px 16px; border-bottom: 1px solid var(--border); font-size: 14px;
+  }
+  .cmd-table td:first-child {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    color: var(--accent3); font-size: 13px;
+  }
+  .cmd-table td:last-child { color: var(--muted); font-size: 13px; }
+
+  /* Footer */
+  .footer { padding: 40px 0; text-align: center; }
+  .footer p { font-size: 13px; color: var(--muted); }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 36px; }
+    .level-grid, .scene-grid, .flavor-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="platform-badges">
+      <span class="badge">Claude Code</span>
+      <span class="badge">VS Code Copilot</span>
+      <span class="badge">Cursor</span>
+      <span class="badge">Kiro</span>
+      <span class="badge">OpenAI Codex CLI</span>
+      <span class="badge">CodeBuddy</span>
+    </div>
+    <h1><span>leader-skills</span></h1>
+    <p class="subtitle" style="font-size:22px;font-weight:700;color:var(--text);margin-bottom:8px">
+      AI 化身你的大厂 Leader，push 你成长
+    </p>
+    <p class="subtitle">
+      你的下一个大厂，何必真的是大厂。leader-skills，你的赛博大厂梦。
+    </p>
+    <div class="install-cmd" onclick="navigator.clipboard.writeText('claude plugin install leader-skills')">
+      claude plugin install leader-skills
+    </div>
+    <p class="install-hint">点击复制</p>
+  </section>
+
+  <!-- 核心定位 -->
+  <section class="positioning">
+    <blockquote>
+      一代人有一代人的鞭子，但鞭子的味道，可以提前学会。
+    </blockquote>
+  </section>
+
+  <!-- 压力等级 -->
+  <section class="levels">
+    <h2>L0 → L5 压力升级</h2>
+    <p class="desc">同一问题每停留一次，压力自动升级。不能无限停在舒适区。</p>
+    <div class="level-grid">
+      <div class="level-card">
+        <div class="level-num">L0 · 信任期</div>
+        <h3>首次交付</h3>
+        <p>Leader 正向建立信任，期待你的产出</p>
+        <div class="pua-line">「方向是对的，这件事你来 owner，我相信你。」</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">L1 · 轻微不满</div>
+        <h3>方案有漏洞</h3>
+        <p>语气克制，但指出问题未解决</p>
+        <div class="pua-line">「我上次说的颗粒度不够，这个版本还是同样的问题。」</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">L2 · 公开施压</div>
+        <h3>三次未改进</h3>
+        <p>引入组织压力，要求明确 deadline</p>
+        <div class="pua-line">「我们已经在这件事上卡了三轮了，整个团队都在等。」</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">L3 · 绩效挂钩</div>
+        <h3>四次未改进</h3>
+        <p>明确说明影响 KPI</p>
+        <div class="pua-line">「我需要跟你说，这件事已经开始影响你的绩效评估了。」</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">L4 · 组织施压</div>
+        <h3>五次未改进</h3>
+        <p>引入 HR，组织已在关注</p>
+        <div class="pua-line">「我需要跟 HR 同步一下你最近的状态。」</div>
+      </div>
+      <div class="level-card">
+        <div class="level-num">L5 · 告别谈话</div>
+        <h3>终局</h3>
+        <p>严肃告知，但必须给出改进路径</p>
+        <div class="pua-line">「你认真想一想自己下一步的 career path。我给你两周时间。」</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 场景 -->
+  <section class="scenarios">
+    <h2>8 大场景，还原完整大厂体验</h2>
+    <p class="desc">从方案 Review 到离职谈话，AI 全程以 Leader 身份陪你走完</p>
+    <div class="scene-grid">
+      <div class="scene-card">
+        <div class="scene-cmd">/leader</div>
+        <h3>通用 Push 模式</h3>
+        <p>万能入口，Leader 根据你的输入自动路由到对应场景</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-cmd">/review</div>
+        <h3>方案 Review</h3>
+        <p>P9/P10 标准：必问底层逻辑、找最弱环节、要求闭环</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-cmd">/1on1</div>
+        <h3>1-on-1 绩效谈话</h3>
+        <p>产出盘点 → Challenge → 职业谈话 → Action Item 全套</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-cmd">/kpi</div>
+        <h3>KPI 季</h3>
+        <p>目标谈判、OKR 拆解、资源预估、向上管理准备</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-cmd">/qbr</div>
+        <h3>复盘拷问</h3>
+        <p>5-Why 根因 → 责任认定 → 改进承诺，彻底复盘</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-cmd">/alignment</div>
+        <h3>对齐会</h3>
+        <p>跨团队对齐前辅导：厘清诉求、预判立场、准备博弈</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-cmd">/offboard</div>
+        <h3>离职谈话</h3>
+        <p>挽留谈判、offer 拆解、条件博弈、优雅告别</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-cmd">/create-leader</div>
+        <h3>自建 Leader 人设</h3>
+        <p>3 问采集 + 材料导入，把你的真实 Leader 蒸馏成 AI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 大厂味道 -->
+  <section class="flavors">
+    <h2>8 种大厂味道，随时切换</h2>
+    <p class="desc">用 <code style="color:var(--accent3);background:var(--surface);padding:2px 6px;border-radius:4px">/flavor {公司名}</code> 即时切换话术 DNA</p>
+    <div class="flavor-grid">
+      <div class="flavor-card">
+        <div class="flavor-name">🟠 阿里味 <code style="font-size:11px;color:var(--muted)">/flavor alibaba</code></div>
+        <div class="flavor-style">底层逻辑 / 拉通对齐 / 灰度推进 / 闭环</div>
+        <div class="flavor-quote">「这件事的底层逻辑是什么？」</div>
+      </div>
+      <div class="flavor-card">
+        <div class="flavor-name">🟡 字节味 <code style="font-size:11px;color:var(--muted)">/flavor bytedance</code></div>
+        <div class="flavor-style">数据驱动 / Context 先行 / 上下同欲 / 10x</div>
+        <div class="flavor-quote">「这件事的数据是多少？」</div>
+      </div>
+      <div class="flavor-card">
+        <div class="flavor-name">🔵 腾讯味 <code style="font-size:11px;color:var(--muted)">/flavor tencent</code></div>
+        <div class="flavor-style">用户价值 / 极致产品感 / 做减法</div>
+        <div class="flavor-quote">「这个功能解决的是用户的什么真实痛点？」</div>
+      </div>
+      <div class="flavor-card">
+        <div class="flavor-name">🔴 华为味 <code style="font-size:11px;color:var(--muted)">/flavor huawei</code></div>
+        <div class="flavor-style">力出一孔 / 自我批判 / 蓝军思维</div>
+        <div class="flavor-quote">「你做过根因分析吗？自我批判一下。」</div>
+      </div>
+      <div class="flavor-card">
+        <div class="flavor-name">🟢 美团味 <code style="font-size:11px;color:var(--muted)">/flavor meituan</code></div>
+        <div class="flavor-style">极致执行 / 用户至上 / 死磕</div>
+        <div class="flavor-quote">「为什么不能再快一点？」</div>
+      </div>
+      <div class="flavor-card">
+        <div class="flavor-name">⬛ 小米味 <code style="font-size:11px;color:var(--muted)">/flavor xiaomi</code></div>
+        <div class="flavor-style">口碑 / 极致 / 快 / 为发烧而生</div>
+        <div class="flavor-quote">「这件事做到极致了吗？」</div>
+      </div>
+      <div class="flavor-card">
+        <div class="flavor-name">🟣 拼多多味 <code style="font-size:11px;color:var(--muted)">/flavor pinduoduo</code></div>
+        <div class="flavor-style">本分 / 上下同心 / 极致效率</div>
+        <div class="flavor-quote">「效率还可以提多少？」</div>
+      </div>
+      <div class="flavor-card">
+        <div class="flavor-name">⚡ 创业味 <code style="font-size:11px;color:var(--muted)">/flavor startup</code></div>
+        <div class="flavor-style">all-in / founder mode / 赌国运</div>
+        <div class="flavor-quote">「你敢不敢 all-in 这件事？」</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 命令速查 -->
+  <section class="commands">
+    <h2>命令速查</h2>
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>命令</th>
+          <th>场景</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>/leader</td><td>通用 Push</td><td>万能入口，自动路由</td></tr>
+        <tr><td>/review</td><td>方案 Review</td><td>P9/P10 标准审视</td></tr>
+        <tr><td>/1on1</td><td>绩效谈话</td><td>1-on-1 全套还原</td></tr>
+        <tr><td>/kpi</td><td>KPI 季</td><td>目标谈判与 OKR 拆解</td></tr>
+        <tr><td>/qbr</td><td>复盘</td><td>5-Why 根因拷问</td></tr>
+        <tr><td>/alignment</td><td>对齐会</td><td>跨团队博弈辅导</td></tr>
+        <tr><td>/offboard</td><td>离职谈话</td><td>挽留 / 放行 / 告别</td></tr>
+        <tr><td>/create-leader</td><td>建人设</td><td>把真实 Leader 蒸馏成 AI</td></tr>
+        <tr><td>/flavor {name}</td><td>切换味道</td><td>alibaba/bytedance/tencent/huawei/meituan/xiaomi/pinduoduo/startup</td></tr>
+        <tr><td>/leader:off</td><td>关闭</td><td>退出 Leader 模式，喘口气</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      <a href="https://github.com/leader-skills/leader-skills">GitHub</a>
+      &nbsp;·&nbsp;
+      MIT License
+      &nbsp;·&nbsp;
+      一代人有一代人的鞭子，但鞭子的味道，可以提前学会。
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>

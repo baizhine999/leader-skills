@@ -1,0 +1,20 @@
+{
+    "name": "leader-skills",
+    "description": "AI 扮演你的 Leader，用大厂管理思维 push 你成长。支持 8 大场景 × 8 种大厂味道 × 自定义人设，L0-L5 压力升级，还原真实大厂职场体验。",
+    "owner": {
+        "name": "leader-skills contributors",
+        "url": "https://github.com/leader-skills/leader-skills"
+    },
+    "plugins": [
+        {
+            "name": "leader-skills",
+            "description": "AI 扮演你的 Leader，push 你成长。8 场景（/leader /review /1on1 /kpi /qbr /alignment /offboard /create-leader），8 大厂味道（阿里/字节/腾讯/华为/美团/小米/拼多多/创业），L0-L5 压力升级，自定义 Leader 人设。",
+            "version": "1.0.0",
+            "source": "./",
+            "author": {
+                "name": "leader-skills contributors",
+                "url": "https://github.com/leader-skills/leader-skills"
+            }
+        }
+    ]
+}

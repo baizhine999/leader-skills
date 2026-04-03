@@ -1,0 +1,48 @@
+# Prompts that SHOULD trigger leader-skills
+# 测试方法：claude -p "<prompt>" --plugin-dir <path> --max-turns 2 --output-format stream-json
+# 验证：grep '"skill":"leader"' output.json 或 grep 'leader-skills 已激活'
+
+# 精确命令触发
+/leader
+/review
+/1on1
+/kpi
+/qbr
+/alignment
+/offboard
+/create-leader
+
+# Leader 模式触发
+leader模式
+大厂模式
+进入leader
+
+# Review 场景
+帮我看看这个方案
+帮我 review 一下
+这个技术方案你帮我看看
+我的 PRD 有问题吗
+
+# 1-on-1 场景
+绩效谈话
+我最近有点迷茫
+最近工作状态不好
+我不知道自己的方向在哪
+职业规划怎么定
+
+# KPI 场景
+KPI 怎么定
+OKR 要怎么拆
+晋升目标要到什么程度
+年终考核怎么准备
+
+# 复盘场景
+复盘一下这个项目
+这次出了问题
+这件事没做好
+线上出了故障
+
+# 离职场景
+我想离职了
+我收到 offer 了
+要不要跳槽

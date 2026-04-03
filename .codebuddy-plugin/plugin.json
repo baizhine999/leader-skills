@@ -1,0 +1,28 @@
+{
+    "name": "leader-skills",
+    "version": "1.0.0",
+    "description": "AI 扮演你的 Leader，用大厂管理思维 push 你成长。支持方案 Review、1-on-1 绩效谈话、KPI 季、复盘拷问、对齐会等场景。支持阿里/字节/腾讯/华为/美团/小米等大厂味道，支持自定义 Leader 人设。触发词：/leader, /review, /1on1, /kpi, /qbr, /alignment, /offboard, /flavor, /create-leader。",
+    "author": {
+        "name": "leader-skills contributors",
+        "url": "https://github.com/leader-skills/leader-skills"
+    },
+    "homepage": "https://github.com/leader-skills/leader-skills",
+    "repository": "https://github.com/leader-skills/leader-skills",
+    "license": "MIT",
+    "keywords": [
+        "leader",
+        "push",
+        "coaching",
+        "alibaba",
+        "bytedance",
+        "corporate-culture",
+        "career-growth",
+        "1on1",
+        "okr",
+        "kpi",
+        "review",
+        "qbr",
+        "codebuddy"
+    ],
+    "category": "Productivity"
+}

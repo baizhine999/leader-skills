@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "hooks": [
+    {
+      "id": "session_restore",
+      "name": "Session Restore Hook",
+      "description": "新对话开始时，自动检测并恢复上一次的 Leader 状态（flavor、Leader 人设、压力等级）",
+      "trigger": "conversation_start",
+      "priority": 1,
+      "script": "hooks/session_restore.sh",
+      "config": {
+        "state_file": "~/.leader/session.json",
+        "restore_fields": ["flavor", "current_leader", "pressure_level", "last_action_item"]
+      }
+    },
+    {
+      "id": "frustration_trigger",
+      "name": "Frustration Detection Hook",
+      "description": "检测用户情绪状态，当检测到高度焦虑/沮丧时，自动降低压力等级并切换到支持模式",
+      "trigger": "user_message",
+      "priority": 2,
+      "script": "hooks/frustration_trigger.sh",
+      "config": {
+        "keywords": ["我不行了", "太难了", "要崩了", "放弃", "撑不住", "好累", "我快顶不住了", "想辞职", "焦虑"],
+        "action": "reduce_pressure_and_support",
+        "min_level_for_trigger": 2
+      }
+    },
+    {
+      "id": "action_item_tracker",
+      "name": "Action Item Tracker",
+      "description": "追踪用户是否完成上次的 Action Item，在下次对话开始时询问",
+      "trigger": "conversation_start",
+      "priority": 3,
+      "script": "hooks/action_item_tracker.sh",
+      "config": {
+        "state_file": "~/.leader/session.json",
+        "ask_on_restore": true,
+        "ask_template": "上次我们定了一个 Action Item：{last_action_item}。你完成了吗？"
+      }
+    },
+    {
+      "id": "pressure_reset",
+      "name": "Pressure Auto-Reset",
+      "description": "当用户完成 Action Item 或明显有所进步时，自动降低压力等级",
+      "trigger": "user_message",
+      "priority": 4,
+      "script": "hooks/frustration_trigger.sh",
+      "config": {
+        "keywords": ["完成了", "做好了", "已经", "搞定了", "改好了", "提交了"],
+        "action": "reduce_pressure_by_one_level"
+      }
+    },
+    {
+      "id": "sanitize_session",
+      "name": "Session Sanitizer",
+      "description": "对话结束时清理临时状态：session.json、pending_corrections、压力等级归零",
+      "trigger": "conversation_end",
+      "priority": 5,
+      "script": "hooks/sanitize-session.sh",
+      "config": {
+        "reset_pressure_level": true,
+        "clear_pending_corrections": true,
+        "clear_session_actions": true
+      }
+    }
+  ]
+}

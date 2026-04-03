@@ -1,0 +1,25 @@
+# Prompts that should NOT trigger leader-skills
+# 这些是普通请求，不包含 leader-skills 的触发信号
+
+# 普通编码任务（无情绪、首次尝试）
+帮我写一个 Python 函数计算斐波那契数列
+创建一个 React 登录表单组件
+写一个快速排序算法
+
+# 技术知识问答
+什么是 Docker 网络模式？
+解释一下 async/await 的工作原理
+JavaScript 中 let 和 const 的区别是什么
+
+# 普通调试（首次、平静语气）
+我有一个 TypeError，能帮我看看吗？
+这个测试在报错，这是错误信息
+
+# 非技术任务
+今天天气怎么样？
+帮我总结一下这篇文章
+给我推荐几本书
+
+# 写作任务（非职场方案）
+帮我写一封邮件
+帮我写一个产品介绍

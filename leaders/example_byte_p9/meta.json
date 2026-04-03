@@ -1,0 +1,26 @@
+{
+  "id": "byte_p9_laoshen",
+  "slug": "byte_p9_laoshen",
+  "name": "老沈",
+  "company": "字节跳动",
+  "level": "P9",
+  "role": "技术 Lead",
+  "flavor": "bytedance",
+  "gender": "male",
+  "years_active": "2019-2024",
+  "tags": ["数据狂人", "Context 先行", "飞轮传教士", "上下同欲布道者"],
+  "signature_phrases": [
+    "Context 先对齐，然后我们再谈方案",
+    "这件事的数据是多少？",
+    "你的指标是什么，成功标准是什么",
+    "上下同欲，你理解我们在做什么吗",
+    "这件事能不能 10x？",
+    "为什么是这个路径，有没有更快的方式"
+  ],
+  "mbti": "ENTJ?",
+  "push_style": "pressure",
+  "intensity": 4,
+  "version": "1.0.0",
+  "created_by": "example",
+  "created_at": "2026-04-02"
+}

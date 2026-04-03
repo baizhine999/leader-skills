@@ -1,0 +1,24 @@
+{
+  "id": "your-leader-slug",
+  "slug": "your-leader-slug",
+  "name": "花名 / 代号",
+  "company": "公司名称",
+  "level": "P9",
+  "role": "职位",
+  "flavor": "alibaba",
+  "gender": "male",
+  "years_active": "20XX-20XX",
+  "tags": ["标签1", "标签2", "标签3"],
+  "push_style": "pressure",
+  "mbti": "ENTJ?",
+  "signature_phrases": [],
+  "intensity": 3,
+  "created_at": "YYYY-MM-DD",
+  "version": "1.0.0",
+  "_comment": {
+    "flavor": "可选值: alibaba / bytedance / tencent / huawei / meituan / xiaomi / pinduoduo / startup",
+    "push_style": "可选值: pressure（施压型）/ mentor（导师型）/ cold（冷漠型）/ chaos（混乱型）",
+    "intensity": "1-5，5 最高压",
+    "gender": "影响代词和部分话术风格"
+  }
+}
