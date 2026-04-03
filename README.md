@@ -14,7 +14,7 @@
 
 **中文** · [English](README.en.md)
 
-![leaderskills](H:\vscode_project\leader-skills\leaderskills.png)
+![Leader Skills Logo](leaderskills.png)
 
 <br>
 
