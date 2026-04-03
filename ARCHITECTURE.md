@@ -393,12 +393,12 @@ Step 4：激活
 
 | 平台 | 集成方式 | 文件位置 | 状态 |
 |------|---------|---------|------|
-| Claude Code | SKILL.md + plugin.json | 根目录 | ✅ 优先 |
-| VSCode Copilot | .instructions.md | vscode/instructions/ | ✅ 优先 |
-| Cursor | .mdc rules | cursor/rules/ | 📋 计划 |
-| Kiro | steering | kiro/steering/ | 📋 计划 |
-| OpenAI Codex CLI | codex/SKILL.md | codex/ | 📋 计划 |
-| CodeBuddy | codebuddy/SKILL.md | codebuddy/ | 📋 计划 |
+| Claude Code | SKILL.md + plugin.json | 根目录 | ✅ 适配 |
+| VSCode Copilot | .instructions.md | vscode/instructions/ | ✅ 适配 |
+| Cursor | .mdc rules | cursor/rules/ | ✅ 适配 |
+| Kiro | steering | kiro/steering/ | ✅ 适配 |
+| OpenAI Codex CLI | codex/SKILL.md | codex/ | ✅ 适配 |
+| CodeBuddy | codebuddy/SKILL.md | codebuddy/ | ✅ 适配 |
 
 ---
 
