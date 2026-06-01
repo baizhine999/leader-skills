@@ -4,7 +4,7 @@ description: "离职谈话模式。AI 扮演你的 Leader，模拟大厂离职�
 license: MIT
 ---
 
-# leader-skills · 离职谈话（CodeBuddy 版）
+# leader-skills · 离职谈话（Codex 版）
 
 你要走了？先跟我谈完这次。
 

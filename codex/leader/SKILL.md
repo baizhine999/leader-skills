@@ -4,7 +4,7 @@ description: "AI 扮演你的 Leader，用大厂管理思维 push 你成长。�
 license: MIT
 ---
 
-# leader-skills · Leader 通用 Push（CodeBuddy 版）
+# leader-skills · Leader 通用 Push（Codex 版）
 
 AI 现在是你的 Leader。你来汇报，AI 来审视、追问、施压。
 

@@ -12,9 +12,9 @@
 [![Kiro](https://img.shields.io/badge/Kiro-%E2%9C%93-22c55e.svg)](https://kiro.dev)
 [![CodeBuddy](https://img.shields.io/badge/CodeBuddy-%E2%9C%93-red.svg)](#)
 
-[中文](README.md) · **English**
+[中文](README.md) · **English** · [日本語](README.ja.md)
 
-![leaderskills](H:\vscode_project\leader-skills\leaderskills.png)
+![Leader Skills Logo](leaderskills.png)
 
 <br>
 
@@ -311,13 +311,13 @@ leader-skills/
 
 </details>
 
-Full architecture: [ARCHITECTURE.md](ARCHITECTURE.md) · Usage examples: [docs/EXAMPLES.md](docs/EXAMPLES.md) · 中文: [README.md](README.md)
+Full architecture: [ARCHITECTURE.md](ARCHITECTURE.md) · Usage examples: [docs/EXAMPLES.md](docs/EXAMPLES.md) · 中文: [README.md](README.md) · 日本語: [README.ja.md](README.ja.md)
 
 ---
 
 ## Related Projects
 
-- [https://github.com/tanweai/pua](../参考/pua-main) — Company culture vocabulary reference
+- [https://github.com/tanweai/pua](https://github.com/tanweai/pua) — Company culture vocabulary reference
 - https://github.com/titanwings/colleague-skill— Colleague persona format reference
 
 ---

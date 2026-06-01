@@ -12,7 +12,7 @@
 [![Kiro](https://img.shields.io/badge/Kiro-%E2%9C%93-22c55e.svg)](https://kiro.dev)
 [![CodeBuddy](https://img.shields.io/badge/CodeBuddy-%E2%9C%93-red.svg)](#)
 
-**中文** · [English](README.en.md)
+**中文** · [English](README.en.md) · [日本語](README.ja.md)
 
 ![Leader Skills Logo](leaderskills.png)
 
@@ -293,7 +293,7 @@ leader-skills/
 
 </details>
 
-详细架构见 [ARCHITECTURE.md](ARCHITECTURE.md) · 使用示例见 [docs/EXAMPLES.md](docs/EXAMPLES.md) · English: [README.en.md](README.en.md)
+详细架构见 [ARCHITECTURE.md](ARCHITECTURE.md) · 使用示例见 [docs/EXAMPLES.md](docs/EXAMPLES.md) · English: [README.en.md](README.en.md) · 日本語: [README.ja.md](README.ja.md)
 
 ---
 

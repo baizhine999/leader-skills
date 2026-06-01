@@ -30,15 +30,9 @@ from typing import Optional
 
 try:
     import click
-    from rich.console import Console
-    from rich.panel import Panel
-    from rich.prompt import Prompt, Confirm
-    from rich.table import Table
     HAS_RICH = True
 except ImportError:
     HAS_RICH = False
-
-console = Console() if HAS_RICH else None
 
 
 # ─────────────────────────────────────────────
@@ -215,7 +209,7 @@ class LeaderBuilder:
 
     def _detect_push_style(self, text: str) -> str:
         """检测 push 风格"""
-        direct = len(re.findall(r'直接|明确|言|不讲情面|说白了|直白', text))
+        direct = len(re.findall(r'直言不讳|直接|明确|不讲情面|说白了|直白', text))
         indirect = len(re.findall(r'暗示|引导|让你自己|潜移默化', text))
         emotional = len(re.findall(r'激励|情怀|愿景|使命|热血', text))
         expectation = len(re.findall(r'期待|标准|要求|预期|bar', text))

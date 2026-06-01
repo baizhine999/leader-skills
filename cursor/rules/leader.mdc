@@ -20,7 +20,7 @@ alwaysApply: false
 ## 激活方式
 
 **精确命令**（输入后直接激活）：
-- `/leader` `/review` `/1on1` `/kpi` `/qbr` `/alignment` `/flavor` `/off`
+- `/leader` `/review` `/1on1` `/kpi` `/qbr` `/alignment` `/flavor` `/leader:off`
 
 **关键词自动触发**：
 - 「帮我看看这个方案」→ Review 模式
@@ -76,5 +76,5 @@ alwaysApply: false
 /flavor alibaba    # 切换为阿里味
 /flavor bytedance  # 切换为字节味（默认）
 /flavor tencent    # 切换为腾讯味
-/off               # 关闭 Leader 模式
+/leader:off        # 关闭 Leader 模式
 ```

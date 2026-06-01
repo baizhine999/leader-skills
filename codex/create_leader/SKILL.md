@@ -4,7 +4,7 @@ description: "Leader 人设构建器。通过 3 个问题 + 材料导入，帮�
 license: MIT
 ---
 
-# leader-skills · Create Leader（CodeBuddy 版）
+# leader-skills · Create Leader（Codex 版）
 
 好，我们来创建一个新的 Leader 人设。
 

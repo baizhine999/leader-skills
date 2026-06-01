@@ -1,6 +1,6 @@
 ---
 name: leader-skills
-description: "AI 扮演你的 Leader，用大厂管理思维 push 你成长。支持方案 Review、1-on-1 绩效谈话、KPI 季、复盘拷问、对齐会等场景。支持阿里/字节/腾讯/华为/美团/小米等大厂味道，支持自定义 Leader 人设。核心链路：AI（扮演 Leader）→ 用户。触发词：/leader, /review, /1on1, /kpi, /qbr, /flavor, /create-leader。"
+description: "AI 扮演你的 Leader，用大厂管理思维 push 你成长。支持方案 Review、1-on-1 绩效谈话、KPI 季、复盘拷问、对齐会等场景。支持阿里/字节/腾讯/华为/美团/小米等大厂味道，支持自定义 Leader 人设。核心链路：AI（扮演 Leader）→ 用户。触发词：/leader, /review, /1on1, /kpi, /qbr, /alignment, /offboard, /flavor, /create-leader。"
 license: MIT
 ---
 

@@ -13,11 +13,11 @@ if [ ! -f "$SESSION_FILE" ]; then
 fi
 
 # 读取上次的 session 状态
-FLAVOR=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('flavor','alibaba'))" 2>/dev/null || echo "alibaba")
-LEADER=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('current_leader','通用'))" 2>/dev/null || echo "通用")
-PRESSURE=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('pressure_level',0))" 2>/dev/null || echo "0")
-ACTION_ITEM=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('last_action_item',''))" 2>/dev/null || echo "")
-LAST_DATE=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('last_session_date',''))" 2>/dev/null || echo "")
+FLAVOR=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('flavor') or 'alibaba')" 2>/dev/null || echo "alibaba")
+LEADER=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('current_leader') or '通用')" 2>/dev/null || echo "通用")
+PRESSURE=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('pressure_level') or 0)" 2>/dev/null || echo "0")
+ACTION_ITEM=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('last_action_item') or '')" 2>/dev/null || echo "")
+LAST_DATE=$(cat "$SESSION_FILE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('last_session_date') or '')" 2>/dev/null || echo "")
 
 # 输出恢复状态（供 SKILL.md 读取）
 echo "SESSION_RESTORED"

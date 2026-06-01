@@ -8,7 +8,6 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import Optional
 
 
 # ─── 飞书文档结构常量 ───────────────────────────────────────────────────────────

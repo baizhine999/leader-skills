@@ -4,7 +4,7 @@ description: "AI 扮演 P9/P10 Leader，用大厂 Review 标准审视你的方�
 license: MIT
 ---
 
-# leader-skills · Review（CodeBuddy 版）
+# leader-skills · Review（Codex 版）
 
 你方案 Review 来了。
 
