@@ -4,7 +4,7 @@ description: "复盘拷问模式。AI 扮演你的 Leader，用 5-Why 根因分�
 license: MIT
 ---
 
-# leader-skills · QBR 复盘（CodeBuddy 版）
+# leader-skills · QBR 复盘（Codex 版）
 
 出了问题。复盘开始。
 

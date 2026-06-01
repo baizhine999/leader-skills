@@ -20,9 +20,9 @@ fi
 
 # 清除未保存的修正意见（如果对话中没有保存）
 if [[ -f "${TEMP_CORRECTIONS}" ]]; then
-    CORRECTION_COUNT=$(python3 -c "
+    CORRECTION_COUNT=$(TEMP_CORRECTIONS="$TEMP_CORRECTIONS" python3 -c "
 import json, os
-path = os.path.expanduser('~/.leader/pending_corrections.json')
+path = os.environ['TEMP_CORRECTIONS']
 try:
     d = json.load(open(path))
     print(len(d) if isinstance(d, list) else len(d.keys()))
@@ -47,9 +47,9 @@ fi
 # 重置 escalation level（对话结束后归零）
 CONFIG_FILE="${CONFIG_DIR}/config.json"
 if [[ -f "${CONFIG_FILE}" ]]; then
-    python3 - <<'PYTHON'
+    CONFIG_FILE="$CONFIG_FILE" python3 - <<'PYTHON' || true
 import json, os
-config_path = os.path.expanduser("~/.leader/config.json")
+config_path = os.environ['CONFIG_FILE']
 with open(config_path, encoding="utf-8") as f:
     config = json.load(f)
 if config.get("current_level", 0) > 0:

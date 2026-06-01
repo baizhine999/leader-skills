@@ -4,7 +4,7 @@ description: "KPI/OKR 季专属模式。AI 扮演你的 Leader，在目标制定
 license: MIT
 ---
 
-# leader-skills · KPI 季（CodeBuddy 版）
+# leader-skills · KPI 季（Codex 版）
 
 KPI 季到了。你定的目标，我来看够不够高、够不够实。
 

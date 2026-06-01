@@ -13,14 +13,14 @@ fi
 ACTION_ITEM=$(cat "$SESSION_FILE" | python3 -c "
 import sys, json
 d = json.load(sys.stdin)
-print(d.get('last_action_item', ''))
+print(d.get('last_action_item') or '')
 " 2>/dev/null || echo "")
 
 # 读取上次对话日期
 LAST_DATE=$(cat "$SESSION_FILE" | python3 -c "
 import sys, json
 d = json.load(sys.stdin)
-print(d.get('last_session_date', ''))
+print(d.get('last_session_date') or '')
 " 2>/dev/null || echo "")
 
 # 计算距上次对话的天数

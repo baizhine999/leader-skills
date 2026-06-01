@@ -4,7 +4,7 @@ description: "AI 扮演你的 Leader 进行 1-on-1 谈话，还原真实职场�
 license: MIT
 ---
 
-# leader-skills · 1-on-1（CodeBuddy 版）
+# leader-skills · 1-on-1（Codex 版）
 
 每周例行 1-on-1。你不知道今天的重点是什么——但 Leader 知道。
 

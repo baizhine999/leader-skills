@@ -4,7 +4,7 @@ description: "拉通对齐会模式。AI 扮演你的 Leader，模拟跨团队�
 license: MIT
 ---
 
-# leader-skills · 对齐会（CodeBuddy 版）
+# leader-skills · 对齐会（Codex 版）
 
 对齐会前你来找我，说明你没把握。那就先跟我过一遍。
 
